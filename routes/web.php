@@ -16,23 +16,24 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-use App\Boleto;
-Route::get('/', function () {
-     $boletos = Boleto::all();
-    foreach($boletos as $boleto){
-        echo 'Usuario: '.$boleto->usuario->name.'<br/>';
-        echo 'Nombre: '.$boleto->cliente->primerNombre.'<br/>';
-        echo 'Apellido: '.$boleto->cliente->apellidoPaterno.'<br/>';
-        echo 'Origen: '.$boleto->origen.'<br/>';
-        echo 'Destino: '.$boleto->destino.'<br/>';
-        echo 'Número de Asiento: '.$boleto->numeroAsiento.'<br/>';
-        echo 'Precio: '.$boleto->precio.'<br/>';
-        echo 'Fecha: '.$boleto->fecha.'<br/>';
-        echo 'Hora: '.$boleto->hora.'<br/>';
-        echo 'Placa: '.$boleto->bus->placa.'<br/>';
-        echo '<hr/>';
-    }
-    // var_dump($boletos);
-    // die();
-    // return view('welcome');
-});
+// use App\Boleto;
+// Route::get('/', function () {
+//      $boletos = Boleto::all();
+//     foreach($boletos as $boleto){
+//         echo 'Usuario: '.$boleto->usuario->name.'<br/>';
+//         echo 'Nombre: '.$boleto->cliente->primerNombre.'<br/>';
+//         echo 'Apellido: '.$boleto->cliente->apellidoPaterno.'<br/>';
+//         echo 'Origen: '.$boleto->origen.'<br/>';
+//         echo 'Destino: '.$boleto->destino.'<br/>';
+//         echo 'Número de Asiento: '.$boleto->numeroAsiento.'<br/>';
+//         echo 'Precio: bs '.$boleto->precio.'<br/>';
+//         echo 'Fecha: '.$boleto->fecha.'<br/>';
+//         echo 'Hora: '.$boleto->hora.'<br/>';
+//         echo 'Placa: '.$boleto->bus->placa.'<br/>';
+//         echo '<hr/>';
+//     }
+//     // var_dump($boletos);
+//     // die();
+//     // return view('welcome');
+// });
+Route::resource('users', 'UsersController');
